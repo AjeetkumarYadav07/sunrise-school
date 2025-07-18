@@ -1,3 +1,4 @@
+//Type
 export interface LandingContent {
     schoolName: string;
     tagline: string;
@@ -5,6 +6,7 @@ export interface LandingContent {
     courses: string[];
 }
 
+//Data
 export const landingData: LandingContent = {
     schoolName: "Sunrise Sollege",
     tagline: "Empowering minds since 1995",

@@ -1,6 +1,6 @@
 import { ThemeProvider } from "./components/theme/theme-provider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/landingPage";
 import DashboardLayout from "./Layout/dashBoardLayout";
 
 function App() {
