@@ -2,6 +2,7 @@ import { ThemeProvider } from "./components/theme/theme-provider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landingPage";
 import DashboardLayout from "./Layout/dashBoardLayout";
+import { SingUp } from "./pages/singupPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/dashboard" element={<DashboardLayout/>} > 
               <Route />
             </Route>
+            <Route path="/singup" element={<SingUp/>}  />
           </Routes>
         </div>
       </ThemeProvider>
