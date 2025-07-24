@@ -9,6 +9,7 @@ import { Students } from "./components/dashboardPage/students";
 import { Teachers } from "./components/dashboardPage/teacher";
 import { Complaints } from "./components/dashboardPage/complaints";
 import { Fees } from "./components/dashboardPage/fees";
+import { StudentPanel } from "./pages/student.panel";
 
 
 
@@ -28,6 +29,7 @@ function App() {
         </Route>
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/student-panel" element={<StudentPanel/>} />
       </Routes>
     </div>
   </ThemeProvider>
