@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Button } from "../components/ui/button";
 import * as Yup from "yup";
 import { Toaster } from "../components/ui/sonner";
+import { addStudent, type Student } from "../firebaseBackend/student.service";
 // Define Typescript interface for values
 interface RegistrationFormValues {
   username: string;
@@ -34,6 +35,26 @@ const RegistrationSchema = Yup.object().shape({
     .oneOf([Yup.ref("password")], "Password must match")
     .required("Confirm Password is required"),
 });
+
+// const handleSubmit 
+ const handleFormSubmit = async (values: RegistrationFormValues) =>{
+    const{username , email, branch, password} = values ;
+
+    const student: Student = {
+      studentname:username ,
+      email ,
+      branch ,
+      password ,
+    }
+    try{
+       await addStudent(student) ;
+       alert("student registration success");
+    }
+    catch(error){
+      console.error("Something is missong " , error);
+      alert("Failed to add student ")
+    }
+ }
 export const RegistrationForm: React.FC = () => {
   const initialValues: RegistrationFormValues = {
     username: "",
@@ -51,12 +72,13 @@ export const RegistrationForm: React.FC = () => {
         <Formik<RegistrationFormValues>
           initialValues={initialValues} // initial values
           validationSchema={RegistrationSchema} // connect <-- Yup
-          onSubmit={(values) => {
+          onSubmit={handleFormSubmit}
                // Save data in localStorage
-               localStorage.setItem("registeredUsers" , JSON.stringify(values));
-               console.log('Form Data' , values);
-               alert("You are Registered sucesfully !")
-          } }
+              //  localStorage.setItem("registeredUsers" , JSON.stringify(values));
+              //  console.log('Form Data' , values);
+              //  alert("You are Registered sucesfully !")
+
+          
         >
           {() => (
             <Form>
