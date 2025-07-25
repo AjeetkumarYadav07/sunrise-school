@@ -1,7 +1,7 @@
 import { landingData } from "../../rowdata/landing/landingMockData";
 export function Courses() {
   return (
-    <section className="py-10 text-center bg-gray-50">
+    <section id="courses" className="py-10 text-center bg-gray-50">
       <h2 className="text-2xl font-bold mb-4">Courses Offered</h2>
       <div className="flex flex-wrap justify-center gap-4">
         {landingData.courses.map((course) => (
