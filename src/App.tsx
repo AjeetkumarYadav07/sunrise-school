@@ -10,7 +10,7 @@ import { Teachers } from "./components/dashboardPage/teacher";
 import { Complaints } from "./components/dashboardPage/complaints";
 import { Fees } from "./components/dashboardPage/fees";
 import { StudentPanel } from "./pages/student.panel";
-
+import { AddTeacher } from "./pages/addTeachers.Page";
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/student-panel" element={<StudentPanel/>} />
+        <Route path="/add-teacher" element={<AddTeacher/>} />
       </Routes>
     </div>
   </ThemeProvider>
