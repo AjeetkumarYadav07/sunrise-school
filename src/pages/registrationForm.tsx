@@ -48,7 +48,7 @@ export const RegistrationForm: React.FC = () => {
   // ✅ HandleFormSubmit
   const handleFormSubmit = async (values: RegistrationFormValues) => {
     localStorage.setItem("activeUser" , JSON.stringify(values) );
-    console.log("form Data  : "  , values);
+    // console.log("form Data  : "  , values);
      
     const { username, email, branch, password } = values;
 

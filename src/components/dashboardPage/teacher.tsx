@@ -1,7 +1,6 @@
-export const Teachers = () =>{
-    return (
-        <div>
-            <h1>Im teahcer</h1>
-        </div>
-    )
-}
+
+export const Teachers = () => {
+  return (
+      <h1> i'm teahcer</h1>
+  );
+};
