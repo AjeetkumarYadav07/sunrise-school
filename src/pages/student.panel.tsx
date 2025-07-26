@@ -4,7 +4,7 @@ import { ladingImages } from "../assets/landingImage/ladingImage";
 import { Button } from "../components/ui/button";
 
 interface UserValues {
-  studentname: string;
+  username: string;
   email: string;
   branch?: string;
 }
@@ -45,7 +45,7 @@ export function StudentPanel() {
           className="w-24 h-24 rounded-full mx-auto mb-4"
         />
         <h1 className="text-xl font-bold text-blue-600 mb-2">
-          Welcome, {user.studentname}!
+          Welcome, {user.username}!
         </h1>
         <p className="text-gray-700 mb-1">{user.email}</p>
         <p className="text-gray-700 mb-1">{user.branch}</p>
