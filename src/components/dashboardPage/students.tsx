@@ -23,10 +23,10 @@ export const Students = () => {
       <h1 className="text-2xl font-bold mb-4">Registered Students ({students.length}) </h1>
       <h2 className="mb-4">
   Filter: 
-  <button onClick={() => setSelectedBranch(" ")} className=" cursor-pointer ml-2 px-2 py-1 bg-gray-200 rounded">All</button>
-  <button onClick={() => setSelectedBranch("Arts")} className=" cursor-pointer ml-2 px-2 py-1 bg-blue-200 rounded">Arts</button>
-  <button onClick={() => setSelectedBranch("Commerce")} className=" cursor-pointer ml-2 px-2 py-1 bg-green-200 rounded">Commerce</button>
-  <button onClick={() => setSelectedBranch("Science")} className=" cursor-pointer ml-2 px-2 py-1 bg-green-200 rounded">Science</button>
+  <button onClick={() => setSelectedBranch(" ")} className=" cursor-pointer ml-2 px-2 py-1 bg-gray-200 rounded  hover:bg-gray-400 ">All</button>
+  <button onClick={() => setSelectedBranch("Arts")} className=" cursor-pointer ml-2 px-2 py-1 bg-blue-200 rounded  hover:bg-blue-400">Arts</button>
+  <button onClick={() => setSelectedBranch("Commerce")} className=" cursor-pointer ml-2 px-2 py-1 bg-green-200   hover:bg-green-400 rounded">Commerce</button>
+  <button onClick={() => setSelectedBranch("Science")} className=" cursor-pointer ml-2 px-2 py-1 bg-yellow-200 rounded  hover:bg-yellow-400 ">Science</button>
 
 </h2>
       <table className="min-w-full border">

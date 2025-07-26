@@ -7,6 +7,7 @@ export interface Teacher {
   name: string;
   phone: string;
   department: string;
+  address : string ;
   createAt?: string;
 }
 
