@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { addTeacher } from "../firebaseBackend/teacher.service";
+import { useNavigate } from "react-router-dom";
 
 interface TeachersValue {
   name: string;
@@ -20,6 +21,7 @@ const TeachersSchema = Yup.object().shape({
 });
 
 export const AddTeacher = () => {
+  const navigate = useNavigate() ;
   const initialValues: TeachersValue = {
     name: "",
     department: "",
@@ -31,7 +33,8 @@ export const AddTeacher = () => {
     try {
       // console.log("Submitting:", teacher);
       await addTeacher(teacher);
-      alert("Data is added successfully");
+     // alert("Data is added successfully");
+      navigate("/dashboard/teachers")
     } catch (error) {
       // console.error("Firebase Error:", error);
       alert("Failed to add data");
@@ -128,7 +131,7 @@ export const AddTeacher = () => {
                 <Field
                   name="address"
                   as="textarea"
-                  rows={2}
+                  rows={1}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <ErrorMessage
@@ -141,7 +144,7 @@ export const AddTeacher = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition"
+                className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md cursor-pointer hover:bg-blue-700 transition"
               >
                 Submit
               </button>
