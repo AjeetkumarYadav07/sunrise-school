@@ -30,6 +30,9 @@ export const Teachers = () => {
   const handleaddTeacher = () => {
      navigate("/add-teacher")
   }
+  const handleDeleteTeahcer = (id:string) =>{
+    setTeachers(prev => prev.filter(id) =>)
+  }
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
@@ -75,7 +78,7 @@ export const Teachers = () => {
             <th className="px-4 py-2 border">Department</th>
             <th className="px-4 py-2 border">Contact</th>
             <th className="px-4 py-2 border">Address</th>
-            <th className="px-4 py-2 border">Status </th>
+            <th className="px-4 py-2 border">Action  </th>
           </tr>
         </thead>
         <tbody>
@@ -85,6 +88,8 @@ export const Teachers = () => {
               <td className="px-4 py-2 border">{teacher.department}</td>
               <td className="px-4 py-2 border">{teacher.phone}</td>
               <td className="px-4 py-2 border">{teacher.address}</td>
+          
+              
 
               {/* /// <td className="px-4 py-2 border ">{student.studentname.startsWith("K") ? "Inactive" : "Active" }</td> */}
             </tr>

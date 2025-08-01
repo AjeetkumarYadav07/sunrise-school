@@ -1,9 +1,9 @@
 // teacher.service.ts
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
 export interface Teacher {
-  id?: string;
+  id: string;
   name: string;
   phone: string;
   department: string;
@@ -26,4 +26,11 @@ export async function getTeachers(): Promise<Teacher[]> {
     id: doc.id,
     ...doc.data(),
   })) as Teacher[];
+}
+
+
+
+export async function deleteTeacher(id: string): Promise<void> {
+  const teacherDocRef = doc(db, "teachers", id);
+  await deleteDoc(teacherDocRef);
 }

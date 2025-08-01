@@ -50,8 +50,11 @@ export function StudentPanel() {
         <p className="text-gray-700 mb-1">{user.email}</p>
         <p className="text-gray-700 mb-1">{user.branch}</p>
         <p className="text-gray-500 mb-4">We’re glad to have you back.</p>
-
-
+        
+        {/* // student complaint section  */}
+        <div>
+          please enter yoour compalints 
+        </div>
         <Button  
         onClick={handleLogout}
         className="bg-red-500 cursor-pointer " >
