@@ -30,9 +30,12 @@ export const Teachers = () => {
   const handleaddTeacher = () => {
      navigate("/add-teacher")
   }
-  const handleDeleteTeahcer = (id:string) =>{
-    setTeachers(prev => prev.filter(id) =>)
+ 
+  // handle delte 
+  const handleDelete = (id:string) => {
+    setTeachers(prev => prev.filter((teacher) =>teacher.id !== id));
   }
+  
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
@@ -89,7 +92,15 @@ export const Teachers = () => {
               <td className="px-4 py-2 border">{teacher.phone}</td>
               <td className="px-4 py-2 border">{teacher.address}</td>
           
-              
+              <td className="px-4 py-2 border">
+  <button
+    onClick={() => handleDelete(teacher.id)}
+    className="text-red-600 hover:text-red-800 font-semibold"
+  >
+    Delete
+  </button>
+</td>
+
 
               {/* /// <td className="px-4 py-2 border ">{student.studentname.startsWith("K") ? "Inactive" : "Active" }</td> */}
             </tr>
